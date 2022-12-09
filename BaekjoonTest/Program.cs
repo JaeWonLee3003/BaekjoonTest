@@ -10,16 +10,16 @@ namespace Baekjoon
     {
         static void Main(string[] args)
         {
-            string[] input = Console.ReadLine().Split();
-            int[] s = { 1, 1, 2, 2, 2, 8 };
-            for (int i = 0; i < input.Length; i++)
-            {
-                s[i] -= int.Parse(input[i]);
-            }
-            foreach (int j in s)
-            {
-                Console.Write(j.ToString() + " ");
-            }
+            // A = (int.Parse(s[0])
+            // B = (int.Parse(s[1])
+            // C = (int.Parse(s[2])
+            string[] s = Console.ReadLine().Split();
+
+            Console.WriteLine((int.Parse(s[0]) + int.Parse(s[1])) % int.Parse(s[2]));
+            Console.WriteLine(int.Parse(s[0]) % (int.Parse(s[2])) + int.Parse(s[1]) % (int.Parse(s[2])));
+            Console.WriteLine((int.Parse(s[0]) * int.Parse(s[1])) % int.Parse(s[2]));
+            Console.WriteLine(int.Parse(s[0]) % (int.Parse(s[2])) * int.Parse(s[1]) % (int.Parse(s[2])));
+
         }
     }
 }
