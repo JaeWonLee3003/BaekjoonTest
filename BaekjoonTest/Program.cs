@@ -6,66 +6,28 @@ public class Program
 
     public static void Main()
     {
+        // if 모두 같은 눈이 나오는 경우에는 10,000원+(같은 눈)×1,000원의 상금을 받게 된다. 
+        // else 모두 다른 눈이 나오는 경우에는(그 중 가장 큰 눈)×100원의 상금을 받게 된다.  
+
+        // 같은 눈이 2개만 나오는 경우에는 1,000원 + (같은 눈)×100원의 상금을 받게 된다. 
 
         // 예제 입력            예제 출력
-        // 14 30 [0] [1]        14 50
-        // 20    [0]
-
-        // 이렇게보면 쉽다. 현재 시각의 시는 A 분은 B 요리하는데 걸리는 시간은 C 이다.
-
-        string[] inputTime = Console.ReadLine().Split();
-        string[] inputDelay = Console.ReadLine().Split();
-
-        int A = int.Parse(inputTime[0]); // 14
-        int B = int.Parse(inputTime[1]); // 30
-        int C = int.Parse(inputDelay[0]); // 20
+        // 3 3 6                1300
+        // 2 2 2                12000
+        // 6 2 5                600
 
 
 
-        if (0 <= A && A <= 23)
+        string[] inputDice = Console.ReadLine().Split();
+
+        int A = int.Parse(inputDice[0]);
+        int B = int.Parse(inputDice[1]);
+
+        while(0 < A && 0 < B)
         {
-            if (0 <= B || B <= 59)
-            {
-                if (0 <= C || C <= 1000)
-                {
-                    {
-
-                        B += C;
-
-                        if (B > 119) // 60분 이상이면
-                        {
-                            A += 2; // 1시간을 추가하고
-                            B -= 120; // 남은 분을 마저 더 해준다.
-                        }
-
-                        if (B > 59) // 60분 이상이면
-                        {
-                            A += 1; // 1시간을 추가하고
-                            B -= 60; // 남은 분을 마저 더 해준다.
-                        }
-
-                        if (A > 24)
-                        {
-                            A = 0;
-                        }
-
-                    }
-                    Console.WriteLine(A + " " + B);
-                }
-
-            }
-
+            Console.WriteLine(A+B);
+            return;
         }
-
-        // 전 문제와 비슷하게 B가 60이 넘으면  -60 을 해준다.
-        // ex ) 50분에서 20분을 더 준다면? 10분으로 바꿔주어야함. 50+20=70-60=10
-
-
-
-
-
-
-
 
     }
 }
